@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How to make money</title>
     <style>
+        /* Original styles preserved */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -15,24 +16,38 @@
             padding-bottom: 60px;
         }
 
+        /* Enhanced header with gradient animation */
         header {
-            background: #87CEEB;
-            padding: 15px 0;
+            background: linear-gradient(-45deg, #87CEEB, #005f99, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            padding: 25px 0;
             text-align: center;
             color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         
         header h1 {
             margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
+        /* Enhanced navigation */
         nav {
             background: #005f99;
-            padding: 10px 0;
+            padding: 15px 0;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         nav a {
@@ -40,62 +55,147 @@
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 20px;
         }
         
         nav a:hover {
-            color: #f0f8ff;
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
         }
 
+        /* Enhanced main content */
         main, section {
             max-width: 800px;
             margin: 20px auto;
-            padding: 20px;
+            padding: 25px;
             background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
 
+        main:hover, section:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Enhanced headings */
         h2 {
             color: #005f99;
             margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #87CEEB;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #005f99;
+            transition: width 0.3s ease;
+        }
+
+        section:hover h2::after {
+            width: 100px;
         }
 
         h3 {
             color: #005f99;
         }
 
+        /* Enhanced lists */
         ul {
-            list-style-type: square;
-            margin-left: 20px;
+            list-style-type: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 10px 0 10px 25px;
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+
+        ul li:before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #87CEEB;
+            transition: transform 0.2s ease;
+        }
+
+        ul li:hover {
+            transform: translateX(10px);
+        }
+
+        ul li:hover:before {
+            transform: translateX(5px);
         }
 
         ul p {
-            margin-left: 20px;
-        }
-        
-        hr {
-            border: 0;
-            height: 1px;
-            background: #87CEEB;
-            margin: 20px 0;
+            margin-left: 25px;
+            padding: 5px 15px;
+            border-left: 3px solid #87CEEB;
+            background: #f8f9fa;
+            border-radius: 0 5px 5px 0;
         }
 
+        /* Enhanced horizontal rule */
+        hr {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #87CEEB, transparent);
+            margin: 25px 0;
+        }
+
+        /* Enhanced footer */
         footer {
             text-align: center;
             padding: 15px 0;
-            background: #87CEEB;
+            background: linear-gradient(to right, #005f99, #87CEEB);
             color: #fff;
             position: fixed;
             width: 100%;
             bottom: 0;
             font-size: 0.9em;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
         }
 
-        section {
-            margin-bottom: 30px;
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            background: #005f99;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            background: #87CEEB;
+        }
+
+        /* Show scroll button when page is scrolled */
+        body.scrolled .scroll-top {
+            opacity: 1;
+        }
+
+        /* Responsive design */
         @media (max-width: 850px) {
             main, section {
                 margin: 20px 15px;
@@ -103,8 +203,13 @@
             }
 
             nav a {
-                margin: 0 10px;
+                margin: 0 5px;
                 font-size: 0.9em;
+                padding: 5px 10px;
+            }
+
+            header h1 {
+                font-size: 2em;
             }
         }
     </style>
@@ -121,7 +226,10 @@
         <a href="#ideas">Ideas</a>
     </nav>
 
+    <!-- Your original content sections remain the same -->
+    <!-- Main content -->
     <main id="about">
+        <!-- Original content preserved -->
         <h2>About us</h2>
         <p>On this website you can find different ways to earn money as a teenager. Some of the topics we will talk about include:</p>
 
@@ -134,6 +242,7 @@
         <hr>
     </main>
 
+    <!-- Business section -->
     <section id="Business">
         <h2>¿What is a business?</h2>
         <p>A business is an economic activity that involves the purchase, sale or exchange of goods and services with the objective of making a profit. Starting a business requires planning and strategy.</p>
@@ -150,22 +259,28 @@
         <hr>
     </section>
 
+    <!-- Types section -->
     <section id="types">
         <h2>Types of business</h2>
         <p>There are different types of businesses, from small startups to large companies. Some common business types include:</p>
         <ul>
-            <li>Online (Digital) Businesses</li>
-            <p>Online businesses are ideal for teenagers because they require low initial investment and can be managed from anywhere.</p>
-            <li>Local or In-Person Businesses</li>
-            <p>Despite the popularity of digital platforms, physical businesses can still be a great option for teens.</p>
-            <li>Creative business</li>
-            <p>If you have artistic skills, there are plenty of opportunities to earn money doing what you love.</p>
-            <li>Food or Beverage Businesses</li>
-            <p>If you love cooking or making delicious treats, food-related businesses can be an excellent choice for teens.</p>
+            <li>Online (Digital) Businesses
+                <p>Online businesses are ideal for teenagers because they require low initial investment and can be managed from anywhere.</p>
+            </li>
+            <li>Local or In-Person Businesses
+                <p>Despite the popularity of digital platforms, physical businesses can still be a great option for teens.</p>
+            </li>
+            <li>Creative business
+                <p>If you have artistic skills, there are plenty of opportunities to earn money doing what you love.</p>
+            </li>
+            <li>Food or Beverage Businesses
+                <p>If you love cooking or making delicious treats, food-related businesses can be an excellent choice for teens.</p>
+            </li>
         </ul>
         <hr>
     </section>
 
+    <!-- Ideas section -->
     <section id="ideas">
         <h2>Business ideas</h2>
         <p>For teenagers, there are many creative ways to make money. Here are some ideas to get you started:</p>
@@ -196,8 +311,21 @@
         </ul>
     </section>
 
+    <a href="#" class="scroll-top">↑</a>
+
     <footer>
         <p>&copy; How to Make Money</p>
     </footer>
+
+    <script>
+        // Simple script to show/hide scroll button
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.body.classList.add('scrolled');
+            } else {
+                document.body.classList.remove('scrolled');
+            }
+        };
+    </script>
 </body>
 </html>
