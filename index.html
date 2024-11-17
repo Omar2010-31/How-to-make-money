@@ -166,7 +166,7 @@
             box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
         }
 
-        /* Scroll to top button */
+        /* Modified scroll to top button - CSS only version */
         .scroll-top {
             position: fixed;
             bottom: 70px;
@@ -180,19 +180,14 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            opacity: 0;
             transition: all 0.3s ease;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            opacity: 1;
         }
 
         .scroll-top:hover {
             transform: translateY(-5px);
             background: #87CEEB;
-        }
-
-        /* Show scroll button when page is scrolled */
-        body.scrolled .scroll-top {
-            opacity: 1;
         }
 
         /* Responsive design */
@@ -226,10 +221,8 @@
         <a href="#ideas">Ideas</a>
     </nav>
 
-    <!-- Your original content sections remain the same -->
     <!-- Main content -->
     <main id="about">
-        <!-- Original content preserved -->
         <h2>About us</h2>
         <p>On this website you can find different ways to earn money as a teenager. Some of the topics we will talk about include:</p>
 
@@ -316,16 +309,5 @@
     <footer>
         <p>&copy; How to Make Money</p>
     </footer>
-
-    <script>
-        // Simple script to show/hide scroll button
-        window.onscroll = function() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.body.classList.add('scrolled');
-            } else {
-                document.body.classList.remove('scrolled');
-            }
-        };
-    </script>
 </body>
 </html>
