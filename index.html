@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How to make money</title>
     <style>
-        /* Original styles preserved */
+        html {
+            scroll-behavior: smooth; /* Hace el scroll suave nativamente */
+        }
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -166,7 +169,7 @@
             box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
         }
 
-        /* Modified scroll to top button - CSS only version */
+        /* Improved scroll to top button - Pure CSS */
         .scroll-top {
             position: fixed;
             bottom: 70px;
@@ -182,7 +185,16 @@
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            opacity: 1;
+            opacity: 0;  /* Hidden by default */
+            visibility: hidden;
+        }
+
+        /* Show scroll button when page is scrolled */
+        @media (min-height: 700px) {
+            .scroll-top {
+                opacity: 1;
+                visibility: visible;
+            }
         }
 
         .scroll-top:hover {
@@ -225,12 +237,15 @@
     <main id="about">
         <h2>About us</h2>
         <p>
-We are a group of ninth graders, this is our website, our purpose is to help people with ideas to make money.
-The members of the group are:</p>
-<li>Omar Efrén Montoya Valenzuela</li>
-<li>Santiago Medina Manjarrez</li>
-<li>Pedro Sanchez lizarraga</li>
-<li>Gilberto Vidaña Carrillo</li>
+            We are a group of ninth graders, this is our website, our purpose is to help people with ideas to make money.
+            The members of the group are:
+        </p>
+        <ul>
+            <li>Omar Efrén Montoya Valenzuela</li>
+            <li>Santiago Medina Manjarrez</li>
+            <li>Pedro Sanchez lizarraga</li>
+            <li>Gilberto Vidaña Carrillo</li>
+        </ul>
         <p>On this website you can find different ways to earn money as a teenager. Some of the topics we will talk about include:</p>
 
         <h3>Topics:</h3>
